@@ -31,7 +31,7 @@ def iniciar():
                 print(f"Depósito de R$ {valor:.2f} realizado com sucesso!\n")
         elif opcao == '3':
             conta.imprimir_extrato()
-        elif opcao == '4':
+        elif opcao == '5':
             print("\nObrigado por usar o Banco D'Paula! Saindo...\n")
             break
         else:
