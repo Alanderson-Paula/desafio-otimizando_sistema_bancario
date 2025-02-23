@@ -21,18 +21,35 @@ def iniciar():
         exibir_menu(opcao)
 
         if opcao == '1':
-            valor = float(input('Valor do Saque: '))
-            if conta.sacar(valor):
-                print(f"Saque de R$ {valor:.2f} realizado com sucesso!\n")
+            try:
+                valor = float(input('Valor do Saque: '))
+                if conta.sacar(valor):
+                    print(f"Saque de R$ {valor:.2f} realizado com sucesso!\n")
+            except ValueError:
+                print('Digite um valor vàlido')
+                valor = float(input('Valor do Saque: '))
+                if conta.sacar(valor):
+                    print(f"Saque de R$ {valor:.2f} realizado com sucesso!\n")
         elif opcao == '2':
-            valor = float(input('Informe o valor do depósito: '))
-            dep = conta.depositar(valor)
-            if dep is not None:
-                print(f"Depósito de R$ {valor:.2f} realizado com sucesso!\n")
+            try:
+                valor = float(input('Informe o valor do depósito: '))
+                # dep = conta.depositar(valor)
+                if conta.depositar(valor):
+                    print(f"Depósito de R$ {valor:.2f} realizado com sucesso!\n")
+                else:
+                    valor = float(input('Informe novamente o valor do depósito: '))
+                    if conta.depositar(valor):
+                        print(f"Depósito de R$ {valor:.2f} realizado com sucesso!\n")
+            except ValueError:
+                print('Digite um valor vàlido')
+                valor = float(input('Informe o valor do depósito: '))
+                if conta.depositar(valor):
+                    print(f"Depósito de R$ {valor:.2f} realizado com sucesso!\n")
+
         elif opcao == '3':
             conta.imprimir_extrato()
         elif opcao == '5':
-            print("\nObrigado por usar o Banco D'Paula! Saindo...\n")
+            print("\n   Obrigado por usar o Banco D'Paula! Saindo...\n")
             break
         else:
             print("Opção inválida! Escolha novamente.\n")

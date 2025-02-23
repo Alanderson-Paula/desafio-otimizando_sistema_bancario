@@ -52,7 +52,7 @@ class ContaBancaria:
 
         self.saldo -= valor
         self.extrato.append(
-            f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}" + Fore.RED + " <= " + Style.RESET_ALL + f"Saque:    R$ {valor:.2f}")
+            f"   {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}" + Fore.RED + " <= " + Style.RESET_ALL + f"Saque:    R$ {valor:.2f}")
         self.numero_saques += 1
         return True
 
@@ -65,7 +65,8 @@ class ContaBancaria:
         if valor > 0:
             self.saldo += valor
             self.extrato.append(
-                f"{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}" + Fore.GREEN + " => " + Style.RESET_ALL + f"Depósito: R$ {valor:.2f}")
+                f"   {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}" + Fore.GREEN + " => " + Style.RESET_ALL + f"Depósito: R$ {valor:.2f}")
+            return True
         else:
             print("Operação falhou! O valor informado é inválido.")
             return None
@@ -74,10 +75,15 @@ class ContaBancaria:
         """
         Exibe o extrato da conta, listando todas as transações realizadas.
         """
-        print("\n================ EXTRATO ================\n")
+        print('\n═════════════════════ EXTRATO ════════════════════\n')
         if not self.extrato:
-            print("Não foram realizadas movimentações.")
+            print('   Não foram realizadas movimentações.')
         else:
-            print("\n".join(self.extrato))
-        print(f"\nSaldo: R$ {self.saldo:.2f}")
-        print("==========================================\n")
+            print('\n'.join(self.extrato))
+
+        print('\n')
+        n = len(str(round(self.saldo, 2)))
+
+        print(f'{" "}','─' * (n + 13))
+        print(f'   Saldo: R$ {self.saldo:.2f}')
+        print('═' * 50, '\n')
