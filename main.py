@@ -15,9 +15,11 @@ def obter_valor_float(mensagem):
     #### Solicita ao usuário um valor numérico e garante que seja um número válido.
 
     Parâmetros:
+    ---
         mensagem (str): Mensagem a ser exibida ao solicitar a entrada do usuário.
 
     Retorna:
+    ---
         float: O valor inserido pelo usuário.
     """
     while True:
@@ -32,6 +34,7 @@ def sair():
     #### Encerra a execução do sistema bancário.
 
     Retorna:
+    ---
         None: A função encerra a execução do programa.
     """
     print("\n🔹 Obrigado por usar o Banco D'Paula! Saindo...\n")
@@ -47,6 +50,7 @@ def iniciar():
     de clientes e saída do sistema.
 
     Retorna:
+    ---
         None: A função opera em um loop contínuo até que o usuário selecione a opção de saída.
     """
     opcoes = {

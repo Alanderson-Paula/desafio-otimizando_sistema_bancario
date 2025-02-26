@@ -9,7 +9,14 @@ def exibir_menu(opcao_selecionada: str = None) -> None:
     """
     #### Exibe o menu principal do sistema bancário, destacando a opção selecionada.
 
-    :param opcao_selecionada: (str) Opção atualmente selecionada pelo usuário.
+    Esta função imprime no terminal um menu interativo, permitindo ao usuário visualizar
+    as operações disponíveis no sistema bancário. Caso uma opção esteja selecionada,
+    ela será destacada para melhor visualização.
+
+    Parâmetros:
+    ---
+        opcao_selecionada: (str) Código da opção atualmente selecionada pelo usuário.
+                               Se None, o menu será exibido sem destaques.
     """
     # os.system('cls' if os.name == 'nt' else 'clear')
     print('╔════════════════════════════════════════════════╗')
