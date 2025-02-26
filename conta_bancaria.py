@@ -99,9 +99,11 @@ class ContaBancaria:
         transação com um timestamp.
 
         Parâmetros:
+        ---
             valor (float): O valor a ser sacado.
 
         Retorna:
+        ---
             bool: `True` se o saque for realizado com sucesso, `False` caso contrário.
 
         Exemplo:
@@ -159,9 +161,11 @@ class ContaBancaria:
         registrada com um timestamp.
 
         Parâmetros:
+        ---
             valor (float): O valor a ser depositado.
 
         Retorna:
+        ---
             bool: `True` se o depósito for realizado com sucesso, `False` caso contrário.
 
         Exemplo:
@@ -205,9 +209,11 @@ class ContaBancaria:
         seja registrada com um timestamp.
 
         Parâmetros:
+        ---
             Nenhum.
 
         Retorna:
+        ---
             None: O método apenas imprime o extrato na tela.
 
         Exemplo:
@@ -253,6 +259,7 @@ class ContaBancaria:
         via API de consulta de CEP. Se o CEP não for encontrado, permite a entrada manual do endereço.
 
         Parâmetros:
+        ---
             cpf (str, opcional): CPF do cliente. Se não for informado, será solicitado via input.
 
         Exceções tratadas:
@@ -311,9 +318,11 @@ class ContaBancaria:
         #### Busca um cliente no banco de dados pelo CPF.
 
         Parâmetros:
+        ---
             cpf (str): O CPF do cliente a ser pesquisado.
 
         Retorna:
+        ---
             dict | None: Retorna um dicionário com os dados do cliente se encontrado, ou None caso contrário.
 
         Exemplo de uso:
@@ -338,6 +347,7 @@ class ContaBancaria:
         Se o cliente não tiver conta, é dada a opção de criar uma nova conta.
 
         Entrada:
+        ---
             - O usuário deve fornecer o CPF do cliente.
 
         Exceções tratadas:
@@ -402,6 +412,7 @@ class ContaBancaria:
         Solicita o CPF do cliente e permite a atualização do nome e endereço. Se o cliente não for encontrado, exibe uma mensagem de aviso.
 
         Entrada:
+        ---
             - O usuário deve fornecer o CPF do cliente.
             - Opcionalmente, pode atualizar o nome e/ou o endereço (separado por vírgulas).
 
@@ -441,6 +452,7 @@ class ContaBancaria:
         Solicita o CPF do cliente a ser excluído. Se o cliente existir, ele será removido da lista de clientes. Caso contrário, exibe um aviso.
 
         Entrada:
+        ---
             - O usuário deve fornecer o CPF do cliente a ser excluído.
 
         Exceções tratadas:
@@ -466,12 +478,14 @@ class ContaBancaria:
         #### Cria uma nova conta bancária para um cliente existente ou permite o cadastro de um novo cliente.
 
         Parâmetros:
+        ---
             agencia (str): O número da agência onde a conta será criada.
             tipo_conta (str, opcional): O tipo de conta a ser criada. Pode ser:
                 - 'c' para conta corrente (padrão)
                 - 'p' para conta poupança
 
         Retorna:
+        ---
             dict | None: Retorna um dicionário contendo os dados da conta criada, ou None se a criação for cancelada ou inválida.
 
         Exceções tratadas:
@@ -527,11 +541,17 @@ class ContaBancaria:
         """
         #### Busca uma conta bancária pelo número da agência e número da conta.
 
+        Percorre a lista de contas cadastradas e retorna a conta correspondente à
+        agência e ao número da conta informados. Caso a conta não seja encontrada,
+        retorna None.
+
         Parâmetros:
-            agencia (str): O número da agência bancária.
-            numero_conta (str): O número da conta a ser buscada.
+        ---
+            agencia (str): Número da agência bancária. Deve ser passado como um argumento posicional.
+            numero_conta (str): Número da conta bancária. Deve ser passado como um argumento nomeado.
 
         Retorna:
+        ---
             dict | None: Retorna um dicionário com os dados da conta se encontrada, ou None caso contrário.
 
         Exemplo de uso:
