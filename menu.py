@@ -11,7 +11,7 @@ def exibir_menu(opcao_selecionada: str = None) -> None:
 
     :param opcao_selecionada: (str) Opção atualmente selecionada pelo usuário.
     """
-    os.system('cls' if os.name == 'nt' else 'clear')
+    # os.system('cls' if os.name == 'nt' else 'clear')
     print('╔════════════════════════════════════════════════╗')
     print(F'║{Back.CYAN + Fore.BLACK + Style.BRIGHT}                BANCO D`PAULA                   {Style.RESET_ALL}║')
     # print('╠════════════════════════════════════════════════╣')
