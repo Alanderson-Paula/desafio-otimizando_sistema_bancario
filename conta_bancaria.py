@@ -468,8 +468,17 @@ class ContaBancaria:
         cpf = input('\nInforme o CPF do cliente a ser excluído: ')
         cliente = self.filtrar_cliente(cpf)
         if cliente:
-            self.clientes.remove(cliente)
-            print(emitir_mensagem(('Aviso', 'Cliente excluído com sucesso.')))
+            opcao = input(
+                f'Deseja excluir o cliente {cliente["nome"].title()}?\nTodas as contas vinculadas serâo excluidas? (S/N): ').strip().lower()
+            if opcao == 's':
+                self.clientes.remove(cliente)
+
+                # Remove todas as contas vinculadas a esse cliente
+                self.contas = [
+                    conta for conta in self.contas if conta["cliente"]["cpf"] != cpf]
+
+                print(emitir_mensagem(
+                    ('Aviso', 'Cliente e contas associadas excluídos com sucesso.')))
         else:
             print(emitir_mensagem(('Aviso', 'Cliente não encontrado.')))
 

@@ -1,9 +1,10 @@
 import os
 import sys
 
-from conta_bancaria import ContaBancaria
 from decoradores import emitir_mensagem
 from menu import exibir_menu
+
+from conta_bancaria import ContaBancaria
 
 AGENCIA = '0001'
 banco = ContaBancaria()
