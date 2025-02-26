@@ -20,7 +20,7 @@ Este é um sistema bancário otimizado desenvolvido em Python, permitindo opera�
 #### 1️⃣ Clone este repositório:
    ```bash
    git clone https://github.com/Alanderson-Paula/desafio-otimizando_sistema_bancario.git
-   cd seu-repositorio
+   cd desafio-otimizando_sistema_bancario
    ```
 #### 2️⃣ Instale as dependências necessárias (se houver):
 
