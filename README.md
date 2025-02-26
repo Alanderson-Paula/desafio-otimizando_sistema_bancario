@@ -113,4 +113,7 @@ Contribuições são bem-vindas! Para contribuir:
 ## 📄 Licença
 Este projeto está sob a licença MIT. Sinta-se livre para modificá-lo e usá-lo conforme necessário.
 
+
+
+<br><br><br><br><br>
 🚀 Desenvolvido com 💙 por Alanderson de Paula
