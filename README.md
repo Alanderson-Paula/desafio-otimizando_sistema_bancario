@@ -115,5 +115,5 @@ Este projeto está sob a licença MIT. Sinta-se livre para modificá-lo e usá-l
 
 
 
-<br><br><br><br><br>
+
 🚀 Desenvolvido com 💙 por Alanderson de Paula
