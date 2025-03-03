@@ -1,119 +1,78 @@
 # 🏦 Desafio Sistema Bancário Otimizado - Banco D'Paula
 
-Este é um sistema bancário otimizado desenvolvido em Python, permitindo operações como cadastro de clientes, criação de contas, depósitos, saques e consultas de extrato. O projeto visa simular o funcionamento básico de um banco digital, utilizando entrada de dados via terminal.
-
----
+Este projeto implementa um **Sistema Bancário Otimizado** com funcionalidades básicas, incluindo **saque**, **depósito** e **extrato**. Esta é a segunda versão do projeto, que traz melhorias e novas funcionalidades em relação à versão anterior.
 
 ## 📌 Funcionalidades
 
-✅ Cadastro de clientes com CPF e endereço.<br>
-✅ Criação de contas bancárias (Corrente e Poupança).<br>
-✅ Depósitos e saques, com verificação de saldo e limites.<br>
-✅ Emissão de extrato detalhado com transações registradas.<br>
-✅ Atualização e exclusão de clientes.<br>
-✅ Interface via terminal, interativa e intuitiva.<br>
+- Realizar **saques** dentro de um limite estabelecido.
+- Efetuar **depósitos** na conta.
+- Exibir um **extrato detalhado** das transações, incluindo data e hora.
+- Interface interativa via terminal com **menu dinâmico**, destacando a opção selecionada.
+- **Cadastro de usuários** e **criação de contas correntes**.
+
+## ⚙️ Regras de Negócio
+
+1. 🏧 **Saque**:
+   - O valor do saque deve ser positivo e não pode exceder o saldo disponível.
+   - Existe um limite máximo de saque por transação.
+   - O número de saques diários é limitado a três.
+
+2. 💰 **Depósito**:
+   - O valor do depósito deve ser positivo.
+
+3. 📝 **Extrato**:
+   - Exibe todas as transações realizadas, incluindo saques e depósitos, com data e hora.
+   - Mostra o saldo atual da conta.
+
+4. 📝 **Cadastro de Usuários**:
+   - Permite cadastrar novos clientes com nome, CPF, data de nascimento e endereço.
+
+5. 📝 **Criação de Contas Correntes**:
+   - Permite criar contas correntes para clientes cadastrados.
+   - Uma conta pertence a apenas um usuário, mas o usuário pode movimentar mais de uma conta.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Python** (versão 3.x)
+- **Colorama** para destacar opções do menu
+- **Datetime** para registrar data e hora das transações
+
+## 📌 Estrutura do Código
+
+### 🔹 Funções Principais
+
+- `exibir_menu(opcao_selecionada=None)`: Exibe o menu principal do sistema bancário, destacando a opção selecionada.
+- `sacar(valor)`: Realiza um saque da conta, verificando saldo disponível, limite de saque e número de saques diários.
+- `depositar(valor)`: Realiza um depósito na conta, adicionando o valor ao saldo.
+- `imprimir_extrato()`: Exibe o extrato da conta, listando todas as transações realizadas.
+- `criar_usuario()`: Cadastra um novo cliente no sistema.
+- `filtrar_cliente(cpf)`: Filtra e retorna um cliente pelo CPF.
+- `criar_conta_corrente()`: Cria uma nova conta corrente para um cliente cadastrado.
+- `iniciar()`: Inicia o loop principal do sistema bancário, permitindo ao usuário selecionar operações.
+
+## 📌 Desafio
+
+O desafio consiste em implementar um sistema bancário otimizado que permita ao usuário realizar operações básicas de saque, depósito e consulta de extrato,porém, agora iremos implementar funções. Nesse desafio optei deixar a interface mais interativa e fácil de usar, destacando a opção selecionada no menu. Além disso, o sistema deve permitir o cadastro de novos usuários e a criação de contas correntes.
+
+## 📌 Relação entre `conta_bancaria-v1.py` e `conta_bancaria-v2.py`
+
+A versão 2 (`conta_bancaria-v2.py`) é uma evolução da versão 1 (`conta_bancaria-v1.py`). As principais diferenças e melhorias incluem:
+
+- **Interface de Usuário**: A versão 2 possui uma interface de menu mais dinâmica e interativa, utilizando a biblioteca `Colorama` para destacar as opções selecionadas.
+- **Estrutura do Código**: A versão 2 organiza melhor o código, separando as funcionalidades em funções específicas (`sacar`, `depositar`, `imprimir_extrato`, `criar_usuario`, `criar_conta_corrente`).
+- **Regras de Negócio**: A versão 2 implementa regras de negócio mais robustas, como limite de saques diários e verificação de saldo antes de realizar um saque.
+- **Cadastro de Usuários e Contas**: A versão 2 adiciona funcionalidades para cadastrar novos usuários e criar contas correntes.
+- **Documentação**: A versão 2 inclui documentação mais detalhada das funções e regras de negócio.
+
+## 📌 Melhorias Futuras
+
+- Implementação de **múltiplas contas**.
+- Armazenamento das transações em um **banco de dados**.
+- Interface gráfica para melhor experiência do usuário.
 
 ---
-
-## 🎮 **Como Usar**
-
-#### 1️⃣ Clone este repositório:
-   ```bash
-   git clone https://github.com/Alanderson-Paula/desafio-otimizando_sistema_bancario.git
-   cd desafio-otimizando_sistema_bancario
-   ```
-#### 2️⃣ Instale as dependências necessárias (se houver):
-
-```bash
-pip install colorama brazilcep
-```
-#### 3️⃣ Execute o programa:
-
-```bash
-python main.py
-```
-
-#### 4️⃣ Escolha uma das opções do menu exibido no terminal para interagir com o sistema.
-
-## 📌 Telas do Menu
-### 📜 Menu Principal
-![menu](img/menu.JPG)
-
-### 🏧 Cadastrar Cliente | Criar Conta
-![cacri](img/cacri.JPG)
-
-### 🏧 Atualizar | Exibir Cliente
-![atex](img/atex.JPG)
-
-### 💰🏧 Operação de Depósito e Saque
-![dep_saq](img/DS.JPG)
-
-### 📄 Extrato da Conta
-![ext](img/extrato.JPG)
-
-
-
-## 🛠 Tecnologias Utilizadas
-- Python 3
-- Biblioteca [Colorama](https://github.com/tartley/colorama) (para formatação de cores no terminal)
-- [BrazilCEP](https://brazilcep.readthedocs.io/) (para consulta de endereço via CEP)
-    #### 📍 BrazilCEP – Biblioteca de Busca de Endereço pelo CEP
-    A biblioteca brazilcep foi utilizada no projeto para realizar a consulta do endereço completo a partir do CEP informado. Sua principal vantagem é a facilidade de integração e a dinamicidade que ela oferece. Ao invés de o usuário ter que inserir o endereço completo manualmente, basta informar o CEP, e a biblioteca retorna automaticamente informações como:
-
-    - Rua
-    - Bairro
-    - Cidade
-    - Estado
-
-    Isso torna o processo de cadastro de clientes muito mais ágil, permitindo que o sistema obtenha rapidamente os dados corretos a partir do CEP.
-
-    Além disso, caso o CEP não seja encontrado ou esteja incorreto, a biblioteca lida com exceções de forma transparente, permitindo que o sistema continue a execução sem que o usuário seja impactado por erros técnicos.
-
-    #### 🎨 Colorama – Formatação de Cores no Terminal
-    A biblioteca colorama é utilizada no projeto para melhorar a interatividade e visualização das mensagens no terminal, tornando a experiência do usuário mais agradável e dinâmica.
-
-    Ela oferece a capacidade de formatar o texto no terminal com cores e estilos, como:
-
-    - Cores de texto (ex.: verde, vermelho, amarelo)
-    - Estilos de texto (ex.: negrito, reset)
-    - Formatação de fundo (ex.: cor de fundo específica)
-
-    Isso é especialmente útil no seu projeto para exibir mensagens de alerta, avisos e resultados das transações de forma clara e diferenciada. Por exemplo, mensagens de erro podem ser exibidas em vermelho para chamar atenção, enquanto mensagens de sucesso podem ser verdes. Essa formatação ajuda o usuário a identificar rapidamente a natureza da informação, seja ela um erro, alerta ou confirmação de sucesso.
-
-## 📌 Melhorias Futuras 🔥
-- Implementação de uma interface gráfica.
-- Integração com um banco de dados real.
-- Implementação de autenticação de usuário via senha.
-
-## 🚀 Conclusão
-Este projeto de sistema bancário otimizado simula operações essenciais, como saque, depósito, consulta de extrato, cadastro, atualização de dados e exclusão de clientes. Além disso, permite a criação de contas bancárias separadas por tipo, como conta corrente e conta poupança, identificadas por números específicos.
-
-A biblioteca brazilcep foi utilizada para facilitar o preenchimento automático de endereços a partir do CEP, tornando o processo mais ágil e preciso. Já a biblioteca colorama foi empregada para formatar as mensagens no terminal, proporcionando uma melhor experiência visual e tornando a interação com o usuário mais intuitiva.
-
-Este projeto faz parte de um treinamento da DIO e demonstra a importância de uma interface simples e funcional. Além disso, evidencia a aplicação prática das habilidades adquiridas no treinamento, integrando bibliotecas poderosas para aprimorar tanto a usabilidade quanto a eficiência do sistema.
-
-## 📝 Contribuição
-Contribuições são bem-vindas! Para contribuir:
-
-- Faça um fork do projeto.
-- Crie uma branch para sua modificação
-    ```bash
-    git checkout -b minha-modificacao
-    ```
-- Faça o commit
-    ```bash
-    git commit -m "Minha melhoria"
-    ```
-- Envie para o GitHub
-    ```bash
-    git push origin minha-modificacao
-    ```
-- Abra um Pull Request.
-
 ## 📄 Licença
 Este projeto está sob a licença MIT. Sinta-se livre para modificá-lo e usá-lo conforme necessário.
 
-
-
 <br><br><br><br><br>
-🚀 Desenvolvido com 💙 por Alanderson de Paula
+🚀 Desenvolvido com 💙 por 𝒜𝓁𝒶𝓃𝒹𝑒𝓇𝓈𝑜𝓃 𝒯𝒶𝒹𝑒𝓊 𝒹𝑒 𝒫𝒶𝓊𝓁𝒶
