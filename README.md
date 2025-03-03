@@ -2,6 +2,11 @@
 
 Este projeto implementa um **Sistema Bancário Otimizado** com funcionalidades básicas, incluindo **saque**, **depósito** e **extrato**. Esta é a segunda versão do projeto, que traz melhorias e novas funcionalidades em relação à versão anterior.
 
+## 📷 Menu de Operações Dinâmco
+
+![menu](img/menu.JPG)
+
+
 ## 📌 Funcionalidades
 
 - Realizar **saques** dentro de um limite estabelecido.
