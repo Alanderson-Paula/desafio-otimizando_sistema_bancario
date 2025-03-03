@@ -34,7 +34,7 @@ def exibir_menu(opcao_selecionada=None):
     print('╚════════════════════════════════════════════════╝')
 
 
-def sacar(*, saldo, valor,  extrato, limite, numero_saques, limite_saque, contas):
+def sacar(*, saldo, valor,  extrato, limite, numero_saques, limite_saque):
     """
     #### Realiza um saque da conta, verificando saldo disponível, limite de saque e número de saques diários.
     """
@@ -207,8 +207,7 @@ def iniciar():
                                                   limite=limite,
                                                   numero_saques=numero_saques,
                                                   extrato=extrato,
-                                                  limite_saque=LIMITE_SAQUES,
-                                                  contas=contas)
+                                                  limite_saque=LIMITE_SAQUES)
 
         elif opcao == '2':
             valor = float(input('Informe o valor do depósito: '))
